@@ -25,9 +25,9 @@ struct CustomComposableDescriptionView: View {
                     .padding(.top)
                 
                 Text("""
-                    Replace this with a description of how to use this view.
+                    This is a robot that spins around the screen and has colorful waves around the body. Also, the robot's size as animation happens
 
-                    If the view accepts a parameter, provide a control to enter the input below.
+                    Type in the textfield below, what you typed will apeear on the robot's body.
                     """)
                 
                 TextField("Enter an input value", text: $phrase)
