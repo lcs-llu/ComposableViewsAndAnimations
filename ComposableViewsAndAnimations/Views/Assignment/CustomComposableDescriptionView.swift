@@ -25,7 +25,7 @@ struct CustomComposableDescriptionView: View {
                     .padding(.top)
                 
                 Text("""
-                    This is a robot that spins around the screen and has colorful waves around the body. Also, the robot's size as animation happens
+                    This is a robot that spins around the screen and has colorful waves around the body.
 
                     Type in the textfield below, what you typed will apeear on the robot's body.
                     """)
