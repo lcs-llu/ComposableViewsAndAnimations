@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CustomComposableView: View {
     
-    
     @State var xOffset = -100.0
     
     @State var rotationAmount = 0.0
@@ -18,17 +17,11 @@ struct CustomComposableView: View {
     
     @State var armHeight = 10.0
     
-    @State var bodyWidth = 80.0
+    @State var bodySize = 80.0
     
-    @State var bodyHeight = 80.0
+    @State var headSize = 40.0
     
-    @State var headWidth = 40.0
-    
-    @State var headHeight = 40.0
-    
-    @State var circleWidth = 30.0
-    
-    @State var circleHeight = 30.0
+    @State var circleSize = 30.0
     
     @State var shouldAnimate = false
     
@@ -37,7 +30,7 @@ struct CustomComposableView: View {
     var body: some View {
         VStack {
             Rectangle()
-                .frame(width: headWidth, height: headHeight)
+                .frame(width: headSize, height: headSize)
             
             HStack {
                 Rectangle()
@@ -45,7 +38,7 @@ struct CustomComposableView: View {
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: bodyWidth, height: bodyHeight)
+                        .frame(width: bodySize, height: bodySize)
                         .overlay(
                             ZStack {
                                 Circle()
@@ -74,10 +67,10 @@ struct CustomComposableView: View {
             }
             HStack{
                 Circle()
-                    .frame(width: circleWidth, height: circleHeight)
+                    .frame(width: circleSize, height: circleSize)
                 
                 Circle()
-                    .frame(width: circleWidth, height: circleHeight)
+                    .frame(width: circleSize, height: circleSize)
             }
         }
         
@@ -94,12 +87,9 @@ struct CustomComposableView: View {
             shouldAnimate = true
             armWidth = 100.0
             armHeight = 40.0
-            bodyWidth = 140.0
-            bodyHeight = 140.0
-            headWidth = 70.0
-            headHeight = 70.0
-            circleWidth = 60.0
-            circleHeight = 60.0
+            bodySize = 140.0
+            headSize = 70.0
+            circleSize = 60.0
             timer.upstream.connect().cancel()
         }
         //       ZStack {
