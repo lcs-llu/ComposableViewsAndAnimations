@@ -14,6 +14,22 @@ struct CustomComposableView: View {
     
     @State var rotationAmount = 0.0
     
+    @State var armWidth = 40.0
+    
+    @State var armHeight = 10.0
+    
+    @State var bodyWidth = 80.0
+    
+    @State var bodyHeight = 80.0
+    
+    @State var headWidth = 40.0
+    
+    @State var headHeight = 40.0
+    
+    @State var circleWidth = 30.0
+    
+    @State var circleHeight = 30.0
+    
     @State var shouldAnimate = false
     
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
@@ -21,15 +37,15 @@ struct CustomComposableView: View {
     var body: some View {
         VStack {
             Rectangle()
-                .frame(width: 40, height: 40)
+                .frame(width: headWidth, height: headHeight)
             
             HStack {
                 Rectangle()
-                    .frame(width: 40, height: 10)
+                    .frame(width: armWidth, height: armHeight)
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: 80, height: 80)
+                        .frame(width: bodyWidth, height: bodyHeight)
                         .overlay(
                             ZStack {
                                 Circle()
@@ -54,14 +70,14 @@ struct CustomComposableView: View {
                     
                 }
                 Rectangle()
-                    .frame(width: 40, height: 10)
+                    .frame(width: armWidth, height: armHeight)
             }
             HStack{
                 Circle()
-                    .frame(width: 30, height: 30)
+                    .frame(width: circleWidth, height: circleHeight)
                 
                 Circle()
-                    .frame(width: 30, height: 30)
+                    .frame(width: circleWidth, height: circleHeight)
             }
         }
         
@@ -76,6 +92,14 @@ struct CustomComposableView: View {
             xOffset = 100.0
             rotationAmount = 360.0
             shouldAnimate = true
+            armWidth = 100.0
+            armHeight = 40.0
+            bodyWidth = 140.0
+            bodyHeight = 140.0
+            headWidth = 70.0
+            headHeight = 70.0
+            circleWidth = 60.0
+            circleHeight = 60.0
             timer.upstream.connect().cancel()
         }
         //       ZStack {
