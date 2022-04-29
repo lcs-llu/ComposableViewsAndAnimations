@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomComposableView: View {
     
+    
+    
     @State var xOffset = -100.0
     
     @State var rotationAmount = 0.0
@@ -24,6 +26,8 @@ struct CustomComposableView: View {
     @State var circleSize = 30.0
     
     @State var shouldAnimate = false
+    
+    var message: String
     
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
     
@@ -58,7 +62,7 @@ struct CustomComposableView: View {
                                         .repeatForever(autoreverses: true)
                                 )
                         )
-                    Text("Leo")
+                    Text(message)
                         .foregroundColor(.white)
                     
                 }
@@ -121,7 +125,6 @@ struct CustomComposableView: View {
 }
 
 struct CustomComposableView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomComposableView()
+    static var previews: some View {        CustomComposableView( message: "hi")
     }
 }

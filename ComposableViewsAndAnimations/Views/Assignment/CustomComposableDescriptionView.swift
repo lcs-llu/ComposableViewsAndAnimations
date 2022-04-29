@@ -31,12 +31,11 @@ struct CustomComposableDescriptionView: View {
                     """)
                 
                 TextField("Enter an input value", text: $phrase)
-                
             }
             .padding(.bottom)
             
             List {
-                NavigationLink(destination: CustomComposableView()) {
+                NavigationLink(destination: CustomComposableView(message:phrase)) {
                     SimpleListItemView(title: "My Composable View",
                                        caption: "A brief description of my view")
                 }
