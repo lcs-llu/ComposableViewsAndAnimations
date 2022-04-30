@@ -27,6 +27,8 @@ struct CustomComposableView: View {
     
     @State var shouldAnimate = false
     
+    @State var armRotationAngle = 0.0
+    
     var message: String
     
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
@@ -39,6 +41,7 @@ struct CustomComposableView: View {
             HStack {
                 Rectangle()
                     .frame(width: armWidth, height: armHeight)
+                    .rotationEffect(.degrees(armRotationAngle), anchor: .center)
                 
                 ZStack {
                     Rectangle()
@@ -68,6 +71,7 @@ struct CustomComposableView: View {
                 }
                 Rectangle()
                     .frame(width: armWidth, height: armHeight)
+                    .rotationEffect(.degrees(-armRotationAngle), anchor: .center)
             }
             HStack{
                 Circle()
@@ -89,11 +93,12 @@ struct CustomComposableView: View {
             xOffset = 100.0
             rotationAmount = 360.0
             shouldAnimate = true
-            armWidth = 100.0
+            armWidth = 80.0
             armHeight = 40.0
             bodySize = 140.0
             headSize = 70.0
             circleSize = 60.0
+            armRotationAngle = 30.0
             timer.upstream.connect().cancel()
         }
         //       ZStack {
