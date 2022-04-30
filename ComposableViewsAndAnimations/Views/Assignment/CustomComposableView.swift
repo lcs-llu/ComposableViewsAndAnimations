@@ -13,6 +13,8 @@ struct CustomComposableView: View {
     
     @State var xOffset = -100.0
     
+    @State var circleDistance = 10.0
+    
     @State var rotationAmount = 0.0
     
     @State var armWidth = 40.0
@@ -73,7 +75,7 @@ struct CustomComposableView: View {
                     .frame(width: armWidth, height: armHeight)
                     .rotationEffect(.degrees(-armRotationAngle), anchor: .center)
             }
-            HStack{
+            HStack(spacing: circleDistance) {
                 Circle()
                     .frame(width: circleSize, height: circleSize)
                 
@@ -91,6 +93,7 @@ struct CustomComposableView: View {
         )
         .onReceive(timer) { input in
             xOffset = 100.0
+            circleDistance = 60.0
             rotationAmount = 360.0
             shouldAnimate = true
             armWidth = 80.0
